@@ -1,0 +1,19 @@
+{
+  "name": "tarkov-map-viewer",
+  "version": "1.0.0",
+  "description": "view tarkov maps one click",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aar0nsky/tarkov-map-viewer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aar0nsky/tarkov-map-viewer/issues"
+  },
+  "homepage": "https://github.com/aar0nsky/tarkov-map-viewer#readme"
+}
