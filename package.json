@@ -4,6 +4,7 @@
   "description": "view tarkov maps one click",
   "main": "index.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/aar0nsky/tarkov-map-viewer/issues"
   },
-  "homepage": "https://github.com/aar0nsky/tarkov-map-viewer#readme"
+  "homepage": "https://github.com/aar0nsky/tarkov-map-viewer#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63"
+  }
 }
