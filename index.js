@@ -41,7 +41,8 @@ const createWindow = () => {
   let props = {
     width: config.width ? config.width : 800, 
     height: config.height ? config.height : 600,
-    title: "Tarkov Map Viewer",
+    title: "Tarkov Multi Tool",
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
       preload: path.join(__dirname, 'preload.js'),
