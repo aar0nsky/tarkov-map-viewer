@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/aar0nsky/tarkov-map-viewer#readme",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63"
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "material-design-lite": "^1.3.0"
   }
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Tarkov Map Viewer</title>
+    <link rel="stylesheet" href="../node_modules/material-design-lite/material.min.css">
+    <script src="../node_modules/material-design-lite/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  </head>
+  <body>
+    <h4>Tarkov Multi-Tool</h4>
+    <form action="#">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="searchInput">
+        <label class="mdl-textfield__label" for="sample3">Search Tarkov Wiki..</label>
+      </div>
+      <button id="searchButton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+        Search
+      </button>
+    </form>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--1-col">Maps</div>
+    </div>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--1-col">Customs</div>
+      <div class="mdl-cell mdl-cell--1-col"><a target="_blank" id="customs"><img src="customs.png" height="100px" width="100px" /></a></div>
+    </div>
+<br /><br /><br /><br /><br />
+    We are using Node.js <span id="node-version"></span>,
+    Chromium <span id="chrome-version"></span>,
+    and Electron <span id="electron-version"></span>.
+
+  </body>
+</html>
