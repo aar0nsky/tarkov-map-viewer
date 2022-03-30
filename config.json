@@ -1,4 +1,4 @@
 {
     "maps": ["customs", "factory", "interchange", "lighthouse", "shoreline", "reserve", "woods"],
-    "extensions": ["png","jpg","jpeg","gif"]
+    "extensions": ["png","jpg","bmp","gif"]
 }
