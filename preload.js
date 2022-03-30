@@ -18,19 +18,21 @@ window.addEventListener('DOMContentLoaded', () => {
     
 
 
+    var filenames = new Array()
     
-
+    
     Object.entries(config.maps).forEach(([key,value]) => {
       const mapGrid = document.getElementById('thumbs');
-      var imageName = (
+      
         Object.entries(config.extensions).forEach(([key,ext]) => {
           let filename = `images\/${value}.${ext}`;
           
           try {
             if (fs.existsSync(filename)) {
               console.log(`Found: ${filename}`)
-              mapGrid.innerHTML = mapGrid.innerHTML + `<div class="mdl-cell mdl-cell--1-col">${value}</div>
-              <div class="mdl-cell mdl-cell--1-col"><a target="_blank" id="${value}"><img src="../${filename}" height="100px" width="100px" /></a></div>`
+              filenames.push(`${value}.${ext}`)
+              mapGrid.innerHTML = mapGrid.innerHTML + `<div class="mdl-cell mdl-cell--2-col" id="${value}"><a target="_blank"><h6>${value}</h6>
+              <img src="../${filename}" height="100px" width="100px" /></a></div>`
             }
 
           } catch(err) {
@@ -38,13 +40,15 @@ window.addEventListener('DOMContentLoaded', () => {
             console.error(err)
           }
         })
-      )
-      const thisValue = value;
-      document.getElementById(thisValue).addEventListener('click', () => {
-        window.open(`${thisValue}.html`, '_blank', 'popup,height=1080,width=1920,resizable=0')
-        })
-      
-
       })
-
+      console.log(filenames.toString())
+      Object.entries(filenames).forEach(([key,value]) => {
+        let id = value.split(".")
+        document.getElementById(id[0]).addEventListener('click', () => {
+          window.open(`../images/${value}`, '_blank', 'popup,height=1080,width=1920,resizable=0')
+          })
+      }
+      )
     })
+
+    

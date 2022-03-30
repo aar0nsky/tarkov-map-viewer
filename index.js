@@ -3,6 +3,7 @@ const path = require('path')
 var fs = require("fs");
 const { exit } = require('process');
 const { ChildProcess } = require('child_process');
+const config = require('./config.json')
 try {
   require('electron-reloader')(module)
 } catch (_) {}
@@ -38,8 +39,8 @@ const createWindow = () => {
   //   preload: path.join(__dirname, 'preload.js')
   // }}
   let props = {
-    width: 800, 
-    height: 600,
+    width: config.width ? config.width : 800, 
+    height: config.height ? config.height : 600,
     title: "Tarkov Map Viewer",
     webPreferences: {
       nodeIntegration: true,
