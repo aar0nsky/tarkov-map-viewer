@@ -56,7 +56,7 @@ const createWindow = () => {
   // let child = new BrowserWindow({parent:win})
   // child.loadFile('customs.html')
   // child.show()
-  win.loadFile('src/index.html')
+  win.loadFile('index.html')
 }
 
 

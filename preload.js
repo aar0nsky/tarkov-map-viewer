@@ -1,5 +1,7 @@
 const config = require('./config.json')
 const fs = require('fs')
+const path = require('path')
+
 window.addEventListener('DOMContentLoaded', () => {
     const replaceText = (selector, text) => {
       const element = document.getElementById(selector)
@@ -25,14 +27,14 @@ window.addEventListener('DOMContentLoaded', () => {
       const mapGrid = document.getElementById('thumbs');
       
         Object.entries(config.extensions).forEach(([key,ext]) => {
-          let filename = `images\/${value}.${ext}`;
+          let filename = path.join('images', `${value}.${ext}`)
           
           try {
             if (fs.existsSync(filename)) {
               console.log(`Found: ${filename}`)
               filenames.push(`${value}.${ext}`)
               mapGrid.innerHTML = mapGrid.innerHTML + `<div class="mdl-cell mdl-cell--2-col" id="${value}"><a target="_blank"><h6>${value}</h6>
-              <img src="../${filename}" height="100px" width="100px" /></a></div>`
+              <img src="${filename}" height="100px" width="100px" /></a></div>`
             }
 
           } catch(err) {
@@ -45,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
       Object.entries(filenames).forEach(([key,value]) => {
         let id = value.split(".")
         document.getElementById(id[0]).addEventListener('click', () => {
-          window.open(`../images/${value}`, '_blank', 'popup,height=1080,width=1920,resizable=0')
+          window.open(path.join('images', value), '_blank', 'popup,height=1080,width=1920,resizable=0')
           })
       }
       )
