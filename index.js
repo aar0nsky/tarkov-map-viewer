@@ -1,4 +1,4 @@
-const { app, BrowserWindow, globalShortcut, protocol } = require('electron')
+const { app, BrowserWindow, globalShortcut, protocol, Menu, MenuItem } = require('electron')
 const path = require('path')
 var fs = require("fs");
 const { exit } = require('process')
@@ -47,6 +47,23 @@ const createWindow = () => {
   win.loadFile('index.html')
 }
 
+const menu = new Menu()
+menu.append(new MenuItem({
+  label: 'Electron',
+  submenu: [{
+    role: 'Close',
+    accelerator: process.platform === 'darwin' ? 'Esc' : 'Esc',
+    click: () => { 
+      let curWindow = BrowserWindow.getFocusedWindow();
+      if(null !== curWindow){
+        curWindow.close()
+      }
+  }
+}]
+}))
+
+Menu.setApplicationMenu(menu)
+
 
 app.whenReady().then(() => {
   protocol.registerFileProtocol('file', (request, callback) => {
@@ -65,29 +82,6 @@ app.whenReady().then(() => {
   //   exit(1)
   // }
   createWindow()
-  globalShortcut.register('Escape', () => {
-    let curWindow = BrowserWindow.getFocusedWindow();
-    if(null !== curWindow){
-      //BrowserWindow.getFocusedWindow().getPosition() // TODO: print to config.json
-      // var bounds = { 'mainWindow' : curWindow.getBounds()}
-      // if(undefined !== curWindow.getParentWindow()){
-      //    bounds = { 'childWindow' : curWindow.getBounds()}
-      // }
-      // curWindow = BrowserWindow.getFocusedWindow()
-      // console.log(curWindow.getBounds())
-      
-      // console.log(JSON.stringify(config))
-      // config = {...bounds}
-      // console.log(JSON.stringify(config))
-      // fs.writeFile('config.json', JSON.stringify(config), 'utf8', (err) => {
-      //   if(err) return console.log(err);
-      // })
-      
-      curWindow.close()
-      
-    }
-    console.log('Escape is pressed') 
-  })
 })
 
 
