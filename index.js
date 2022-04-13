@@ -17,6 +17,9 @@ try {
   require("electron-reloader")(module)
 } catch (_) {}
 
+
+var mainWindow
+
 var config = require("./config.json")
 
 var props = {
@@ -35,29 +38,15 @@ if (undefined === config.mainWindow) {
   let config = { mainWindow: {} }
   config.mainWindow.width, (props.width = 800)
   config.mainWindow.height, (props.height = 600)
-  // fs.writeFile('config.json', JSON.stringify(config), 'utf8', (err) => {
-  // if(err) return console.log(err);
-  // })
+  fs.writeFile("config.json", JSON.stringify(config), "utf8", err => {
+    if (err) return console.log(err)
+  })
 } else {
   props.width = config.mainWindow.width
   props.height = config.mainWindow.height
 }
 
-// Promise.all(BrowserWindow.getAllWindows().map(br => {
-//   return new Promise((resolve) => {
-//     br.webContents.once('dom-ready', () => { resolve() })
-//   })
-// })).then(() => {
-//   // register every new-window callback
-//   webContents.getAllWebContents().forEach(wc => {
-//     wc.on('new-window', onWindowOpen)
-//   })
-// })
-// // load URL(s) for BrowserWindow(s)
-// win.loadURL(path.resolve(__dirname, 'your.html'))
-// })
 
-let mainWindow
 
 const createWindow = () => {
   mainWindow = new BrowserWindow(props)
@@ -74,13 +63,15 @@ const createWindow = () => {
   // mainWindow.webContents.on('new-window', onWindowOpen)
   // event.newGuest = win
 
+  // open windows on other display
+
   let displays = screen.getAllDisplays()
   let externalDisplay = displays.find(display => {
     return display.bounds.x !== 0 || display.bounds.y !== 0
   })
   mainWindow.webContents.setWindowOpenHandler(() => {
     if (externalDisplay) {
-      win = new BrowserWindow({
+      return new BrowserWindow({
         x: externalDisplay.bounds.x + 50,
         y: externalDisplay.bounds.y + 50
       })
@@ -88,29 +79,45 @@ const createWindow = () => {
   })
 
   const menu = defaultMenu(app, shell)
-  menu.splice(4, 0, {
-    label: "Custom",
-    submenu: [
-      {
-        label: "Close",
-        accelerator: "Esc",
-        click: () => {
-          let curWindow = BrowserWindow.getFocusedWindow()
-          if (null !== curWindow) {
-            curWindow.close()
-          }
+  // menu.splice(4, 0, {
+  //   label: "Custom",
+  //   submenu: [
+  //     {
+  //       label: "Close",
+  //       accelerator: "Esc",
+  //       click: () => {
+  //         let curWindow = BrowserWindow.getFocusedWindow()
+  //         if (null !== curWindow) {
+  //           curWindow.close()
+  //         }
+  //       }
+  //     },
+  //     {
+  //       label: "Map",
+  //       accelerator: "m",
+  //       click: () => {
+  //         return
+  //       }
+  //     }
+  //   ]
+  // })
+
+  menu.splice(5,0,new MenuItem({
+    label: 'Shortcuts',
+    submenu: [{
+      role: 'Close',
+      accelerator: 'Esc',
+      click: () => {
+        let curWindow = BrowserWindow.getFocusedWindow();
+        if(null !== curWindow){
+          curWindow.close()
         }
-      },
-      {
-        label: "Map",
-        accelerator: "m",
-        click: () => {}
-      }
-    ]
-  })
+    }
+  }]
+  }))
 
   // menu.append(new MenuItem({
-  //   label: 'Electron',
+  //   label: 'Custom',
   //   submenu: [{
   //     role: 'Close',
   //     accelerator: 'Esc',

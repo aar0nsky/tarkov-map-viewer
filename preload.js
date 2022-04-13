@@ -71,11 +71,15 @@ window.addEventListener("DOMContentLoaded", () => {
   Object.entries(filenames).forEach(([key, value]) => {
     let id = value.split(".")
     document.getElementById(id[0]).addEventListener("click", () => {
-      var mapWindow = window.open(
-        path.join("images", value),
+        
+        let filepath = `images/${value}`
+        console.log(filepath)
+        
+        let mapWindow = window.open(filepath,
         "_blank",
         "height=1080,width=1920,resizable=0"
       )
+      // mapWindow.loadFile(filepath)
     })
   })
 })
