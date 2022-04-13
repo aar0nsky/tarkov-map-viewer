@@ -63,20 +63,21 @@ const createWindow = () => {
   // mainWindow.webContents.on('new-window', onWindowOpen)
   // event.newGuest = win
 
-  // open windows on other display
+  // TODO: second monitor code is breaking new windows
 
-  let displays = screen.getAllDisplays()
-  let externalDisplay = displays.find(display => {
-    return display.bounds.x !== 0 || display.bounds.y !== 0
-  })
-  mainWindow.webContents.setWindowOpenHandler(() => {
-    if (externalDisplay) {
-      return new BrowserWindow({
-        x: externalDisplay.bounds.x + 50,
-        y: externalDisplay.bounds.y + 50
-      })
-    }
-  })
+  // open windows on other display
+  // let displays = screen.getAllDisplays()
+  // let externalDisplay = displays.find(display => {
+  //   return display.bounds.x !== 0 || display.bounds.y !== 0
+  // })
+  // mainWindow.webContents.setWindowOpenHandler(() => {
+  //   if (externalDisplay) {
+  //     return new BrowserWindow({
+  //       x: externalDisplay.bounds.x + 50,
+  //       y: externalDisplay.bounds.y + 50
+  //     })
+  //   }
+  // })
 
   const menu = defaultMenu(app, shell)
   // menu.splice(4, 0, {
