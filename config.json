@@ -1,1 +1,18 @@
-{"mainWindow":{}}
+{
+    "mainWindow": {
+        "x": 2288,
+        "y": 142,
+        "width": 744,
+        "height": 600
+    },
+    "maps": [
+        "customs",
+        "factory",
+        "interchange",
+        "lighthouse",
+        "shoreline",
+        "reserve",
+        "woods",
+        "labs"
+    ]
+}

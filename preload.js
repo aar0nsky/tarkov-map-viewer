@@ -28,16 +28,15 @@ window.addEventListener("DOMContentLoaded", () => {
   })
 
   var filenames = new Array()
-
-  console.log(JSON.stringify(config.maps))
-  config.maps = [
+  config.maps = config.maps ? config.maps : [
     "customs",
     "factory",
     "interchange",
     "lighthouse",
     "shoreline",
     "reserve",
-    "woods"
+    "woods",
+    "labs"
   ]
   config.extensions = ["png", "jpg", "bmp", "gif"]
 
@@ -67,19 +66,14 @@ window.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  console.log(filenames.toString())
   Object.entries(filenames).forEach(([key, value]) => {
     let id = value.split(".")
     document.getElementById(id[0]).addEventListener("click", () => {
-        
-        let filepath = `images/${value}`
-        console.log(filepath)
-        
+        let filepath = `images/${value}`        
         let mapWindow = window.open(filepath,
         "_blank",
         "height=1080,width=1920,resizable=0"
       )
-      // mapWindow.loadFile(filepath)
     })
   })
 })
