@@ -130,8 +130,11 @@ const createWindow = (exports.createWindow = () => {
           accelerator: "Esc",
           click: () => {
             let curWindow = BrowserWindow.getFocusedWindow()
-            if (null !== curWindow) {
+            if (null !== curWindow && curWindow !== mainWindow) {
               curWindow.close()
+            }
+            else if(curWindow === mainWindow) {
+              app.quit()
             }
           }
         }
