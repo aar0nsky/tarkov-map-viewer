@@ -1,9 +1,9 @@
 {
     "mainWindow": {
-        "x": 2804,
-        "y": 134,
-        "width": 778,
-        "height": 668
+        "x": 2201,
+        "y": 104,
+        "width": 762,
+        "height": 715
     },
     "maps": [
         "customs",

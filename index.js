@@ -12,7 +12,6 @@ const {
 const defaultMenu = require("electron-default-menu")
 const path = require("path")
 var fs = require("fs")
-// const { exit } = require('process')
 try {
   require("electron-reloader")(module)
 } catch (_) {}
@@ -34,6 +33,7 @@ var runningConfig = initConfig
       ]
     }
 
+var mainWindow
 var props = {
   title: "Tarkov Multi Tool",
   autoHideMenuBar: false,
@@ -60,10 +60,20 @@ const loadConfig = (exports.loadConfig = () => {
 })
 
 const createWindow = (exports.createWindow = () => {
+
   loadConfig()
 
+  const switchWindows = () => {
+    let windows = mainWindow.getChildWindows()
+    windows[0].show()
+  }
+
+
+
   let mainWindow = new BrowserWindow(props)
+  
   mainWindow.loadFile("index.html")
+  mainWindow.show()
 
   mainWindow.webContents.setWindowOpenHandler(() => {
     // Get External display object
@@ -88,7 +98,8 @@ const createWindow = (exports.createWindow = () => {
         action: "allow",
         overrideBrowserWindowOptions: {
           x: externalDisplay.bounds.x,
-          y: externalDisplay.bounds.y
+          y: externalDisplay.bounds.y,
+          autoHideMenuBar: true
         }
       }
     }
@@ -119,7 +130,6 @@ const createWindow = (exports.createWindow = () => {
           accelerator: "Esc",
           click: () => {
             let curWindow = BrowserWindow.getFocusedWindow()
-            curWindow.screen
             if (null !== curWindow) {
               curWindow.close()
             }
@@ -137,9 +147,13 @@ app.whenReady().then(() => {
     const pathname = decodeURI(request.url.replace("file:///", ""))
     callback(pathname)
   })
-
   createWindow()
+         // Register a 'CommandOrControl+X' shortcut listener.
+        globalShortcut.register('m', () => {
+        switchWindows()
+        })
 })
+
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") app.quit()
 })
