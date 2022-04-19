@@ -33,7 +33,6 @@ var runningConfig = initConfig
       ]
     }
 
-var mainWindow
 var props = {
   title: "Tarkov Multi Tool",
   autoHideMenuBar: false,
@@ -51,34 +50,38 @@ const loadConfig = (exports.loadConfig = () => {
     runningConfig.mainWindow.height = 600
     runningConfig.mainWindow.x = 960
     runningConfig.mainWindow.y = 540
-    
-    fs.writeFile("config.json", JSON.stringify(runningConfig), "utf8", err => {
-      if (err) return console.log(err)
-    })
+
+    fs.writeFile(
+      "config.json",
+      JSON.stringify(runningConfig),
+      "utf8",
+      (err) => {
+        if (err) return console.log(err)
+      }
+    )
   }
-    props = {...props, ...runningConfig.mainWindow}
+  props = { ...props, ...runningConfig.mainWindow }
 })
 
-const createWindow = (exports.createWindow = () => {
+// const switchWindows = window => {
+//   let windows = window.getChildWindows()
+//   if(typeof windows !== "undefined") {
+//     windows[0].show()
+//   }  
+// }
 
+const createWindow = (exports.createWindow = () => {
   loadConfig()
 
-  const switchWindows = () => {
-    let windows = mainWindow.getChildWindows()
-    windows[0].show()
-  }
-
-
-
   let mainWindow = new BrowserWindow(props)
-  
+
   mainWindow.loadFile("index.html")
   mainWindow.show()
 
   mainWindow.webContents.setWindowOpenHandler(() => {
     // Get External display object
     let displays = screen.getAllDisplays()
-    let externalDisplay = displays.find(display => {
+    let externalDisplay = displays.find((display) => {
       return display.bounds.x !== 0 || display.bounds.y !== 0
     })
 
@@ -89,21 +92,28 @@ const createWindow = (exports.createWindow = () => {
       y: winBounds.y
     })
 
-    if (windowScreen.id !== externalDisplay.id) {
-      return {
-        action: "allow"
-      }
-    } else {
-      return {
-        action: "allow",
-        overrideBrowserWindowOptions: {
-          x: externalDisplay.bounds.x,
-          y: externalDisplay.bounds.y,
-          autoHideMenuBar: true
-        }
+    let options = {
+      action: "allow",
+      parent: mainWindow
+    }
+
+    return windowScreen.id !== externalDisplay.id ? 
+    options : 
+    {
+      ...options, 
+      overrideBrowserWindowOptions: {
+      x: externalDisplay.bounds.x,
+      y: externalDisplay.bounds.y,
+      autoHideMenuBar: true
       }
     }
   })
+
+  // TODO: not even sure if this is the right spot, key is being captured but need to figure out logic.
+  // globalShortcut.register("m", () => {
+  //   console.log("pressed")
+  //   switchWindows(mainWindow)
+  // })
 
   mainWindow.on("close", () => {
     let configPath = path.join(__dirname, "config.json")
@@ -132,8 +142,7 @@ const createWindow = (exports.createWindow = () => {
             let curWindow = BrowserWindow.getFocusedWindow()
             if (null !== curWindow && curWindow !== mainWindow) {
               curWindow.close()
-            }
-            else if(curWindow === mainWindow) {
+            } else if (curWindow === mainWindow) {
               app.quit()
             }
           }
@@ -151,10 +160,6 @@ app.whenReady().then(() => {
     callback(pathname)
   })
   createWindow()
-         // Register a 'CommandOrControl+X' shortcut listener.
-        globalShortcut.register('m', () => {
-        switchWindows()
-        })
 })
 
 app.on("window-all-closed", () => {
