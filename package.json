@@ -2,10 +2,10 @@
   "name": "tarkov-map-viewer",
   "version": "1.0.0",
   "description": "view tarkov maps one click",
-  "main": "index.js",
+  "main": "app/index.js",
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
-    "start": "electron ./index",
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -31,19 +31,21 @@
   },
   "dependencies": {
     "electron-default-menu": "^1.0.2",
-    "material-design-lite": "^1.3.0"
+    "material-design-lite": "^1.3.0",
+    "rimraf": "^3.0.2"
   },
   "build": {
-    "appId": "Tarkov Toolkit",
-    "extraResources": 
-      [
-        {
-          "from": "config.json",
-          "to": ".",
-          "filter": ["**/*"]
-        }
-      ]
-    ,
+    "appId": "aar0nism.tarkovtoolkit",
+    "productName": "Tarkov Toolkit",
+    "directories": {
+      "app": ".",
+      "output": "out"
+    },
+    "files": [
+    "package.json",
+    "app/**/*",
+    "node_modules"
+    ],
     "win": {
       "target": "NSIS"
     }

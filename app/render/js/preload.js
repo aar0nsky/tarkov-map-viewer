@@ -1,7 +1,11 @@
-var config = require("./config.json")
+var config = require("../../resources/config.json")
 const fs = require("fs")
 const path = require("path")
 const shell = require("electron").shell
+
+// const IMAGES_PATH = app.isPackaged ? 
+//   path.join(process.resourcesPath, 'images') :
+//   path.join(app.getAppPath(), 'images')
 
 window.addEventListener("DOMContentLoaded", () => {
   const replaceText = (selector, text) => {
@@ -24,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
   })
 
   document.getElementById("editConfig").addEventListener("click", () => {
-    shell.openPath(path.join(__dirname, "config.json"))
+    shell.openPath(path.resolve(__dirname, path.join("../../", path.join("resources", "config.json"))))
   })
 
   var filenames = new Array()
@@ -48,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const mapGrid = document.getElementById("thumbs")
 
     Object.entries(config.extensions).forEach(([key, ext]) => {
-      let filename = path.join("images", `${value}.${ext}`)
+      let filename = path.resolve(path.resolve(__dirname, "../assets", `${value}.${ext}`))
 
       try {
         if (fs.existsSync(filename)) {
@@ -69,7 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
   Object.entries(filenames).forEach(([key, value]) => {
     let id = value.split(".")
     document.getElementById(id[0]).addEventListener("click", () => {
-        let filepath = `images/${value}`        
+        let filepath = path.resolve(path.join(__dirname, "../assets",`${value}`))
         let mapWindow = window.open(filepath,
         "_blank",
         "height=1080,width=1920,resizable=0"

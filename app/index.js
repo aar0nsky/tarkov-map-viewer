@@ -16,7 +16,11 @@ try {
   require("electron-reloader")(module)
 } catch (_) {}
 
-const initConfig = require("./config.json")
+
+const initConfig = require(path.join(__dirname, path.join("resources", "config.json")))
+if(initConfig) {
+  console.log(JSON.stringify(initConfig))
+}
 var runningConfig = initConfig
   ? initConfig
   : {
@@ -38,7 +42,7 @@ var props = {
   autoHideMenuBar: false,
   webPreferences: {
     nodeIntegration: true,
-    preload: path.join(__dirname, "preload.js"),
+    preload: path.resolve(__dirname, path.join("render/js", "preload.js")),
     contextIsolation: false,
     nativeWindowOpen: true,
     webSecurity: false
@@ -52,7 +56,7 @@ const loadConfig = (exports.loadConfig = () => {
     runningConfig.mainWindow.y = 540
 
     fs.writeFile(
-      "config.json",
+      path.join(__dirname, path.join("resources", "config.json")),
       JSON.stringify(runningConfig),
       "utf8",
       (err) => {
@@ -75,7 +79,7 @@ const createWindow = (exports.createWindow = () => {
 
   let mainWindow = new BrowserWindow(props)
 
-  mainWindow.loadFile("index.html")
+  mainWindow.loadFile(path.resolve(__dirname, "render/html/index.html"))
   mainWindow.show()
 
   mainWindow.webContents.setWindowOpenHandler(() => {
@@ -116,7 +120,7 @@ const createWindow = (exports.createWindow = () => {
   // })
 
   mainWindow.on("close", () => {
-    let configPath = path.join(__dirname, "config.json")
+    let configPath = path.join(__dirname, path.join("resources", "config.json"))
     try {
       runningConfig.mainWindow = mainWindow.getBounds()
       fs.writeFileSync(configPath, JSON.stringify(runningConfig, null, 4))
