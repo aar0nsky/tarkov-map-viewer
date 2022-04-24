@@ -6,14 +6,15 @@ set arg1=%1
 
 pause
 
-if [arg1]==[] goto performrelease
-goto :noarg
+if [arg1]==[] goto :noarg
+goto :performrelease
 
 :performrelease
 @echo Performing release version v%arg1%
 git commit -am v%arg1%
 git tag v%arg1%
 git push && git push --tags
+goto :quit
 
 :error
 echo Failed with error #%errorlevel%.
