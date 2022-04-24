@@ -57,11 +57,11 @@ var props = {
     }
 }
 const loadConfig = (exports.loadConfig = () => {
-    if (undefined === runningConfig.mainWindow) {
+    if (typeof runningConfig.mainWindow === "undefined") {
         runningConfig.mainWindow.width = 800
         runningConfig.mainWindow.height = 600
-        runningConfig.mainWindow.x = 960
-        runningConfig.mainWindow.y = 540
+        runningConfig.mainWindow.x = 0
+        runningConfig.mainWindow.y = 0
 
         fs.writeFile(
             path.join(CONFIG_PATH),
