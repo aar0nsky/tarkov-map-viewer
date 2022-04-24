@@ -21,10 +21,13 @@ const CONFIG_PATH = app.isPackaged
     : path.join(app.getAppPath(), "config.json")
 
 const { ipcMain } = require("electron")
+
 ipcMain.on("configPath", (event) => {
     event.returnValue = CONFIG_PATH
 })
-
+ipcMain.on("getAppVersion", (event) => {
+    event.returnValue = app.getVersion()
+})
 const initConfig = require(CONFIG_PATH)
 if (initConfig) {
     console.log(JSON.stringify(initConfig))

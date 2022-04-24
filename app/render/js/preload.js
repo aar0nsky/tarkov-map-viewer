@@ -1,7 +1,6 @@
 const fs = require("fs")
 const path = require("path")
-const shell = require("electron").shell
-const { ipcRenderer } = require("electron")
+const { ipcRenderer, shell, remote } = require("electron")
 const CONFIG_PATH = ipcRenderer.sendSync("configPath")
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -14,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
         replaceText(`${dependency}-version`, process.versions[dependency])
     }
 
-    replaceText("app-version", process.env.npm_package_version)
+    replaceText("app-version", ipcRenderer.sendSync("getAppVersion"))
 
     document.getElementById("searchButton").addEventListener("click", () => {
         let searchTerm = document.getElementById("searchInput")
