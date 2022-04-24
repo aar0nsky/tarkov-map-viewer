@@ -8,8 +8,7 @@
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
-    "release": "electron-builder -p always"
+    "dist": "electron-builder"
   },
   "repository": {
     "type": "git",
