@@ -4,36 +4,36 @@
 
 @font-face {
 	font-family: 'Bender';
-	src:url('/themes/eft/fonts/Bender.eot');
-	src:url('/themes/eft/fonts/Bender.eot?#iefix')  format('embedded-opentype'),
-		/*url('/themes/eft/fonts/Bender.woff2')       format('woff2'),*/
-		url('/themes/eft/fonts/Bender.woff')        format('woff'),
-		url('/themes/eft/fonts/Bender.ttf')         format('truetype'),
-		url('/themes/eft/fonts/Bender.svg#benderregular')  format('svg');
+	src:url('../fonts/Bender.eot');
+	src:url('../fonts/Bender.eot?#iefix')  format('embedded-opentype'),
+		/*url('../fonts/Bender.woff2')       format('woff2'),*/
+		url('../fonts/Bender.woff')        format('woff'),
+		url('../fonts/Bender.ttf')         format('truetype'),
+		url('../fonts/Bender.svg#benderregular')  format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bender-Light';
-	src:url('/themes/eft/fonts/Bender-Light.eot');
-	src:url('/themes/eft/fonts/Bender-Light.eot?#iefix')        format('embedded-opentype'),
-		/*url('/themes/eft/fonts/Bender-Light.woff2')              format('woff2'),*/
-		url('/themes/eft/fonts/Bender-Light.woff')              format('woff'),
-		url('/themes/eft/fonts/Bender-Light.ttf')               format('truetype'),
-		url('/themes/eft/fonts/Bender-Light.svg#benderlight')  format('svg');
+	src:url('../fonts/Bender-Light.eot');
+	src:url('../fonts/Bender-Light.eot?#iefix')        format('embedded-opentype'),
+		/*url('../fonts/Bender-Light.woff2')              format('woff2'),*/
+		url('../fonts/Bender-Light.woff')              format('woff'),
+		url('../fonts/Bender-Light.ttf')               format('truetype'),
+		url('../fonts/Bender-Light.svg#benderlight')  format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Bender-Bold';
-	src:url('/themes/eft/fonts/Bender-Bold.eot');
-	src:url('/themes/eft/fonts/Bender-Bold.eot?#iefix')         format('embedded-opentype'),
-		/*url('/themes/eft/fonts/Bender-Bold.woff2')               format('woff2'),*/
-		url('/themes/eft/fonts/Bender-Bold.woff')               format('woff'),
-		url('/themes/eft/fonts/Bender-Bold.ttf')                format('truetype'),
-		url('/themes/eft/fonts/Bender-Bold.svg#benderbold')    format('svg');
+	src:url('../fonts/Bender-Bold.eot');
+	src:url('../fonts/Bender-Bold.eot?#iefix')         format('embedded-opentype'),
+		/*url('../fonts/Bender-Bold.woff2')               format('woff2'),*/
+		url('../fonts/Bender-Bold.woff')               format('woff'),
+		url('../fonts/Bender-Bold.ttf')                format('truetype'),
+		url('../fonts/Bender-Bold.svg#benderbold')    format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -41,12 +41,12 @@
 
 @font-face {
 	font-family: 'Neusa-DemiBold';
-	src:url('/themes/eft/fonts/Neusa-DemiBold.eot');
-	src:url('/themes/eft/fonts/Neusa-DemiBold.eot?#iefix')          format('embedded-opentype'),
-		/*url('/themes/eft/fonts/Neusa-DemiBold.woff2')               format('woff2'),*/
-		url('/themes/eft/fonts/Neusa-DemiBold.woff')                format('woff'),
-		url('/themes/eft/fonts/Neusa-DemiBold.ttf')                 format('truetype'),
-		url('/themes/eft/fonts/Neusa-DemiBold.svg#neusademibold')  format('svg');
+	src:url('../fonts/Neusa-DemiBold.eot');
+	src:url('../fonts/Neusa-DemiBold.eot?#iefix')          format('embedded-opentype'),
+		/*url('../fonts/Neusa-DemiBold.woff2')               format('woff2'),*/
+		url('../fonts/Neusa-DemiBold.woff')                format('woff'),
+		url('../fonts/Neusa-DemiBold.ttf')                 format('truetype'),
+		url('../fonts/Neusa-DemiBold.svg#neusademibold')  format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -278,12 +278,12 @@ input.withIcon {
 .icon.eye.eye-closed {
 	width: 32px;
 	height: 27px;
-	background-image: url(/themes/eft/images/eye_closed.png);
+	background-image: url(../images/eye_closed.png);
 }
 .icon.eye.eye-opened {
 	width: 32px;
 	height: 27px;
-	background-image: url(/themes/eft/images/eye_opened.png);
+	background-image: url(../images/eye_opened.png);
 }
 
 #passwordStrengthMeter {
@@ -394,7 +394,7 @@ h2 {
 	font-size: 36px;
 	display:inline-block;
 	padding: 50px 90px;
-	background: url(/themes/eft/images/h2_bg.png) no-repeat center center scroll;
+	background: url(../images/h2_bg.png) no-repeat center center scroll;
 	-webkit-background-size: contain;
 	-moz-background-size: contain;
 	background-size: contain;
@@ -485,7 +485,7 @@ section {
 	padding: 12px;
 	font-family: 'Bender-Bold';
 	font-size: 12pt;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 .notice span {
 	font-family: 'Bender';
@@ -613,7 +613,7 @@ form input.form-file {
 .profile {
     margin-bottom: 20px;
 	padding: 25px 7px;
-    background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+    background: url(../images/news_li_bg.png) repeat top left scroll;
 	text-align:left;
     position: relative;
 }
@@ -1228,14 +1228,14 @@ header .account a.small {
 	left: 0;
 	margin: 0 auto;
 	padding-bottom: 10px;
-	background-image: url(/themes/eft/images/preorder_frame.png?ver=3.0);
+	background-image: url(../images/preorder_frame.png?ver=3.0);
 	background-repeat: no-repeat;
 	background-size: 90%;
 	background-position: center center;
 	transition: background 200ms ease-in-out;
 }
 #page #banner_28_preorder .cell .preorder_button:hover {
-	background-image: url(/themes/eft/images/preorder_frame_hover.png?ver=3.0);
+	background-image: url(../images/preorder_frame_hover.png?ver=3.0);
 	background-repeat: no-repeat;
 	background-size: 90%;
 	background-position: center center;
@@ -1471,7 +1471,7 @@ header .account a.small {
 	z-index: 60;
 	margin-top: -11px;
 	margin-left: 20px;
-	background: url('/themes/eft/images/form_logo_bg.png') no-repeat center center scroll;
+	background: url('../images/form_logo_bg.png') no-repeat center center scroll;
 	display: block;
 	position: absolute;
 
@@ -1523,7 +1523,7 @@ header .account a.small {
 #parallax .social_bg {
 	position: absolute;
 	top: 0;
-	background: url('/themes/eft/images/social_bg.png') repeat;
+	background: url('../images/social_bg.png') repeat;
 	width:100%;
 	min-height: 525px;
 	margin: 0;
@@ -1644,7 +1644,7 @@ form .note {
 	z-index: 60;
 	margin-top: 6px;
 	margin-left: 10px;
-	background: url('/themes/eft/images/form_logo_bg.png') no-repeat center center scroll;
+	background: url('../images/form_logo_bg.png') no-repeat center center scroll;
 	display: block;
 	position: absolute;
 }
@@ -1665,7 +1665,7 @@ form .note {
 	color: #9a8866;
 }
 .red_bg {
-	background: url(/themes/eft/images/red_stripe_bg.png) repeat top left scroll;
+	background: url(../images/red_stripe_bg.png) repeat top left scroll;
 	max-width: 550px;
 	margin: 0 auto;
 }
@@ -1810,7 +1810,7 @@ form .form-item .custom-select ul{
 form .form-item .custom-select .custom-text{
 	cursor:pointer;
 	display:inline-block;
-	background:url('/themes/eft/images/select.png') 97% center no-repeat #000000;
+	background:url('../images/select.png') 97% center no-repeat #000000;
 }
 form .form-item .custom-select li{
 	cursor:pointer;
@@ -1876,7 +1876,7 @@ form .form-item .select-list .maxlength .scroll-drag:after{
 	background: #000000;
 	color: #9a8866;
 	border-radius: 3px;
-	background:url('/themes/eft/images/select.png') 97% center no-repeat #000000;
+	background:url('../images/select.png') 97% center no-repeat #000000;
 }
 .jq-selectbox__dropdown {
 	box-sizing: border-box;
@@ -2396,7 +2396,7 @@ form .error, label.error + input {
 	color: #9a8866 !important;
 }
 .select2-selection__arrow {
-	background: url('/themes/eft/images/select.png') center center no-repeat #000000;
+	background: url('../images/select.png') center center no-repeat #000000;
 	top: 10px !important;
 	right: 10px !important;
 }
@@ -2450,7 +2450,7 @@ div[itemProp="image"] img {
 #news ul li {
 	margin: 21px 0;
 	padding: 7px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #news ul li .image {
 	display: inline-block;
@@ -2508,31 +2508,31 @@ div[itemProp="image"] img {
 	box-shadow: 0 0 100px rgba(65,61,52,1), 0 0 6px rgba(232,190,107,0.8);
 }
 /*#news ul li>div[data-type="2"][data-lang="en"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="de"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_de.jpg);*/
+/*	background-image: url(../images/patch_note_de.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="ru"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_ru.jpg);*/
+/*	background-image: url(../images/patch_note_ru.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="es"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="pt"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="fr"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="zh"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="it"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_it.jpg);*/
+/*	background-image: url(../images/patch_note_it.jpg);*/
 /*}*/
 /*#news ul li>div[data-type="2"][data-lang="ja"] .image a {*/
-/*	background-image: url(/themes/eft/images/patch_note_en.jpg);*/
+/*	background-image: url(../images/patch_note_en.jpg);*/
 /*}*/
 #news ul li>div[data-type="2"] .image a img {
 	display: none;
@@ -2866,7 +2866,7 @@ header .menu li.raid a {
 	background-color: #9a8866;
 }
 #about.raid {
-	background-image: url(/themes/eft/images/raid_bg.jpg) !important;
+	background-image: url(../images/raid_bg.jpg) !important;
 }
 #about.raid .annotation {
 	margin-top: 150px;
@@ -3094,7 +3094,7 @@ header .menu li.raid a {
 }
 #preorder-page section ul li.highlighted:after {
 	content: "";
-	background: url(/themes/eft/images/chance_highlight.png) no-repeat center center scroll;
+	background: url(../images/chance_highlight.png) no-repeat center center scroll;
 	width: 600px;
 	height: 44px;
 	display: block;
@@ -3145,7 +3145,7 @@ header .menu li.raid a {
 	top: 7px;
 	width: 10px;
 	height: 10px;
-	background: url(/themes/eft/images/list_opener_colored.png) no-repeat center scroll;
+	background: url(../images/list_opener_colored.png) no-repeat center scroll;
 	-webkit-transition: transform 0.2s ease, left 0.2s ease;
 	-moz-transition: transform 0.2s ease, left 0.2s ease;
 	-ms-transition: transform 0.2s ease, left 0.2s ease;
@@ -3164,7 +3164,7 @@ header .menu li.raid a {
     padding: 12px;
 	font-family: 'Neusa-DemiBold';
     font-size: 12pt;
-    background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+    background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #preorder-page section .notice a {
 	display:inline;
@@ -3180,7 +3180,7 @@ header .menu li.raid a {
     padding: 12px;
 	font-family: 'Bender-Bold';
     font-size: 16pt;
-    background: url(/themes/eft/images/news_li_bg_harder.png) repeat top left scroll;
+    background: url(../images/news_li_bg_harder.png) repeat top left scroll;
 }
 #preorder-page section .notice-hard p {
 	text-transform: uppercase;
@@ -3286,7 +3286,7 @@ header .menu li.raid a {
 }
 #preorder_left_behind {
 	z-index:8;
-	/*background-image: url(/themes/eft/images/left_behind_bg.jpg);*/
+	/*background-image: url(../images/left_behind_bg.jpg);*/
     background-repeat: no-repeat;
     background-position: center 30px;
 	padding-top:240px;
@@ -3305,7 +3305,7 @@ header .menu li.raid a {
 }
 #preorder_prepare_for_escape {
 	z-index:8;
-	/*background-image: url(/themes/eft/images/prepare_for_escape_bg.jpg);*/
+	/*background-image: url(../images/prepare_for_escape_bg.jpg);*/
     background-repeat: no-repeat;
     background-position: center -35px;
 	padding-top:98px;
@@ -3313,7 +3313,7 @@ header .menu li.raid a {
 }
 #preorder_edge_of_darkness {
 	z-index:8;
-	/*background-image: url(/themes/eft/images/edge_of_darkness_bg.jpg);*/
+	/*background-image: url(../images/edge_of_darkness_bg.jpg);*/
     background-repeat: no-repeat;
 	background-position: center 40px;
 	padding-top:107px;
@@ -3429,7 +3429,7 @@ header .menu li.raid a {
 #preorder_footer .warning {
 	text-align: left;
     padding: 30px 0;
-    background: url(/themes/eft/images/red_stripe_bg.png) repeat top left scroll;
+    background: url(../images/red_stripe_bg.png) repeat top left scroll;
 }
 #preorder_footer .warning span {
 	text-transform: uppercase;
@@ -3589,11 +3589,11 @@ div.sherpa_user_page .descr {
 }
 
 .sherpa_list .item a:hover {
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 
 .sherpa_list .item:hover {
-	/*background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;*/
+	/*background: url(../images/news_li_bg.png) repeat top left scroll;*/
 }
 
 .sherpa_list .item .box {
@@ -3639,7 +3639,7 @@ div.sherpa_user_page .getlink {
 	max-width: 100%;
 	text-align: center;
 	padding: 5px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 
 div.sherpa_user_page .getlink>div{
@@ -3774,7 +3774,7 @@ div.sherpa_user_page .side .sherpa_request_list {
 }
 
 div.sherpa_user_page .side .score {
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 	padding: 15px;
 	margin-bottom: 20px;
 	line-height: 1em;
@@ -3853,7 +3853,7 @@ div.sherpa_user_page .side .pagination .pager span {
 .sherpa_user_page .sherpa_title {
 	display: inline-block;
 	margin: 40px 0 20px 0;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 	padding: 15px;
 	width: 100%;
 }
@@ -3998,7 +3998,7 @@ position: absolute;
 left: 10px;
 top: 0;
 bottom: 0;
-background: url(/themes/eft/images/warning_icon.png) no-repeat center center scroll;
+background: url(../images/warning_icon.png) no-repeat center center scroll;
 width: 30px;
 background-size: contain;
 opacity: 0.7;
@@ -4042,7 +4042,7 @@ padding: 0 25px;
 #support .knowledge .head {
 padding: 5px;
 font-family: Bender-Bold;
-background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support .knowledge .head a {
 text-transform: uppercase;
@@ -4071,7 +4071,7 @@ color: #d0d0d0 !important;
 font-family: Bender-Bold;
 margin-top:5px;
 text-align: right;
-background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support .knowledge .foot a {
 padding:5px;
@@ -4124,7 +4124,7 @@ color: #9a8866;
 }
 #support form {
 padding: 10px 0 15px;
-background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support form #main_search {
 width: 552px;
@@ -4140,7 +4140,7 @@ height:150px;
 #support .warning {
 	margin: 30px 0;
 	padding: 30px 0;
-	background: url(/themes/eft/images/red_stripe_bg.png) repeat top left scroll;
+	background: url(../images/red_stripe_bg.png) repeat top left scroll;
 	color: #aeaeb0;
 	font-family: 'Neusa-DemiBold';
 	text-align: center;
@@ -4218,7 +4218,7 @@ float: right;
 /*Knowledge PAGE*/
 #knowledge form {
 	padding: 10px 0 15px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #knowledge form #search {
 	width: 807px;
@@ -4457,7 +4457,7 @@ form.support-form textarea {
 }
 #support.requests .side ul li.active {
 	color:#9a8866;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support.requests .side ul li.active dd {
 	color:#9a8866 !important;
@@ -4480,7 +4480,7 @@ form.support-form textarea {
 	text-align: left;
 	padding: 10px;
 	margin-top: -8px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support.requests .headline {
 	margin-bottom:10px;
@@ -4498,7 +4498,7 @@ form.support-form textarea {
 }
 #support.requests .main .request {
 	padding: 10px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 #support.requests .main .request .subject {
 	text-align: left;
@@ -4813,17 +4813,17 @@ form.support-form textarea {
 }
 .ratings_stars {
 	cursor: pointer;
-	background: url(/themes/eft/images/star_black.png) no-repeat;
+	background: url(../images/star_black.png) no-repeat;
 	float:      left;
 	height:     28px;
 	padding:    2px;
 	width:      27px;
 }
 .ratings_vote {
-	background: url(/themes/eft/images/star_normal.png) no-repeat;
+	background: url(../images/star_normal.png) no-repeat;
 }
 .ratings_over {
-	background: url(/themes/eft/images/star_hovered.png) no-repeat;
+	background: url(../images/star_hovered.png) no-repeat;
 }
 
 
@@ -4846,7 +4846,7 @@ form.support-form textarea {
 #ratingTable .season-info {
 	padding: 27px 0;
 	margin:16px 0 0 0;
-	background: url("/themes/eft/images/rating_season_stripe.png") repeat center center scroll;
+	background: url("../images/rating_season_stripe.png") repeat center center scroll;
 }
 #ratingTable .twitch .season-info {
 	background: none;
@@ -4892,7 +4892,7 @@ form.support-form textarea {
 }
 #ratingTable .season-info>.container>.season>.title {
 	background:
-			url('/themes/eft/images/rating_season_name_texture.png')
+			url('../images/rating_season_name_texture.png')
 			repeat-x;
 	background-size: cover;
 	color: transparent;
@@ -4987,7 +4987,7 @@ form.support-form textarea {
 }
 #ratingTable .twitch .season-info>.container>.season>.buttons>.button.awards:before {
 	content: "";
-	background: url(/themes/eft/images/awards_ico.png);
+	background: url(../images/awards_ico.png);
 	width: 39px;
 	height: 31px;
 	position: absolute;
@@ -4996,7 +4996,7 @@ form.support-form textarea {
 }
 #ratingTable .twitch .season-info>.container>.season>.buttons>.button.join:before {
 	content: "";
-	background: url(/themes/eft/images/join_ico.png);
+	background: url(../images/join_ico.png);
 	width: 29px;
 	height: 30px;
 	position: absolute;
@@ -5144,7 +5144,7 @@ form.support-form textarea {
 	content:"";
 	right: 5px;
 	top: 6px;
-	background: url("/themes/eft/images/search_icon.png") no-repeat top left scroll;
+	background: url("../images/search_icon.png") no-repeat top left scroll;
 	width: 19px;
 	height: 19px;
 }
@@ -5329,7 +5329,7 @@ form.support-form textarea {
 }
 #ratingFiltersForm.twitch .filters .center:after {
 	content: '';
-	background: url(/themes/eft/images/global_bg.png) no-repeat center bottom;
+	background: url(../images/global_bg.png) no-repeat center bottom;
 	pointer-events: none;
 	user-select: none;
 	position: absolute;
@@ -5399,7 +5399,7 @@ form.support-form textarea {
 }
 #ratingTable>.fixed-top:before {
 	content: "";
-	background: url("/themes/eft/images/rating_table_head_bg.png") no-repeat center top scroll;
+	background: url("../images/rating_table_head_bg.png") no-repeat center top scroll;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -5427,33 +5427,33 @@ table.ratingsTable {
 	color: #535ec9;
 }
 .ratingsTable.twitch td .lastseen.streaming:before {
-	background: url(/themes/eft/images/twitch_icon_online.png);
+	background: url(../images/twitch_icon_online.png);
 }
 .ratingsTable.twitch td .lastseen:before {
 	content: '';
 	position: absolute;
 	top: -12px;
 	left: -15px;
-	background: url(/themes/eft/images/twitch_icon.png);
+	background: url(../images/twitch_icon.png);
 	width: 47px;
 	height: 47px;
 	z-index: -1;
 }
 .ratingsTable.twitch td[data-col-val="1"] {
-	background-image: url(/themes/eft/images/twitch_rank1.png);
+	background-image: url(../images/twitch_rank1.png);
 }
 .ratingsTable.twitch td[data-col-val="2"] {
-	background-image: url(/themes/eft/images/twitch_rank2.png);
+	background-image: url(../images/twitch_rank2.png);
 }
 .ratingsTable.twitch td[data-col-val="3"] {
-	background-image: url(/themes/eft/images/twitch_rank3.png);
+	background-image: url(../images/twitch_rank3.png);
 }
 .ratingsTable.thead {
 	margin-top: 28px;
 	z-index: 0;
 }
 .ratingsTable tr.searched>td {
-	background: url(/themes/eft/images/rating_season_stripe.png) repeat scroll center center;
+	background: url(../images/rating_season_stripe.png) repeat scroll center center;
 }
 .ratingsTable tr>td a.report{
 	opacity:0.25;
@@ -5615,7 +5615,7 @@ table.ratingsTable {
 	padding-bottom: 125px;
 }
 #ratingTable>.fixed-bottom {
-	background: #0e0e0e url(/themes/eft/images/rating_season_stripe.png) repeat scroll center center;
+	background: #0e0e0e url(../images/rating_season_stripe.png) repeat scroll center center;
 	margin: 0;
 	position: fixed;
 	bottom: 0;
@@ -5998,7 +5998,7 @@ footer .right_block .legal li:last-child:after {
 }
 .blueimp-gallery>.slides>.slide-loading {
 	opacity:0.59;
-	background: url(/themes/eft/images/loader.svg) center no-repeat !important;
+	background: url(../images/loader.svg) center no-repeat !important;
 	background-size: 84px 84px !important;
 }
 .blueimp-gallery>.prev, .blueimp-gallery>.next {
@@ -6012,7 +6012,7 @@ footer .right_block .legal li:last-child:after {
 	opacity: 1 !important;
 }
 .blueimp-gallery>.slides>.slide>.video-content>a {
-	background: url(/themes/eft/images/play.png) center no-repeat !important;
+	background: url(../images/play.png) center no-repeat !important;
 }
 
 
@@ -6523,7 +6523,7 @@ form .report_type .select2 {
 
 /*#preorder_book_predator {*/
 /*	color: #e5e6e7 !important;*/
-/*	background: url(/themes/eft/images/preorder_book_predator_bg.png);*/
+/*	background: url(../images/preorder_book_predator_bg.png);*/
 /*	background-repeat: no-repeat;*/
 /*	background-position: center 52px;*/
 /*}*/
@@ -6549,7 +6549,7 @@ form .report_type .select2 {
 
 /*#preorder_book_behind {*/
 /*	color: #e5e6e7 !important;*/
-/*	background: url(/themes/eft/images/preorder_book_behind_bg.png);*/
+/*	background: url(../images/preorder_book_behind_bg.png);*/
 /*	background-repeat: no-repeat;*/
 /*	background-position: center 52px;*/
 /*}*/
@@ -6602,22 +6602,22 @@ form .report_type .select2 {
 	text-align: center;
 	border: none;
 	box-shadow: none;
-	background: url(/themes/eft/images/send_gift_static.png);
+	background: url(../images/send_gift_static.png);
 }
 .account_bonuses .account_bonus .button:hover {
-	background: url(/themes/eft/images/send_gift_hover.png);
+	background: url(../images/send_gift_hover.png);
 }
 .account_bonuses .account_bonus .button:focus {
-	background: url(/themes/eft/images/send_gift_pressed.png);
+	background: url(../images/send_gift_pressed.png);
 }
 .account_bonuses .account_bonus .button[data-clipboard-text] {
-	background: url(/themes/eft/images/copy_gift_static.png);
+	background: url(../images/copy_gift_static.png);
 }
 .account_bonuses .account_bonus .button[data-clipboard-text]:hover {
-	background: url(/themes/eft/images/copy_gift_hover.png);
+	background: url(../images/copy_gift_hover.png);
 }
 .account_bonuses .account_bonus .button[data-clipboard-text]:focus {
-	background: url(/themes/eft/images/copy_gift_pressed.png);
+	background: url(../images/copy_gift_pressed.png);
 }
 
 
@@ -6723,7 +6723,7 @@ form .report_type .select2 {
 }
 
 #Sherpa-UserRequest ul.sherpa_list li.item {
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 
 .sherpa_user_card .sherpa_user_stats {
@@ -6813,7 +6813,7 @@ form .report_type .select2 {
 }
 
 .sherpa_page {
-	background-image: url(/themes/eft/images/maxsherp_02.jpg);
+	background-image: url(../images/maxsherp_02.jpg);
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: auto;
@@ -6940,7 +6940,7 @@ form .report_type .select2 {
  }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_left_1 {
-	background-image: url(/themes/eft/images/quote_text_shadow_left.png);
+	background-image: url(../images/quote_text_shadow_left.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -6957,7 +6957,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_left_2 {
-	background-image: url(/themes/eft/images/quote_text_shadow_left.png);
+	background-image: url(../images/quote_text_shadow_left.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -6974,7 +6974,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_left_3 {
-	background-image: url(/themes/eft/images/quote_text_shadow_left.png);
+	background-image: url(../images/quote_text_shadow_left.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -6991,7 +6991,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_left_4 {
-	background-image: url(/themes/eft/images/quote_text_shadow_left.png);
+	background-image: url(../images/quote_text_shadow_left.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7008,7 +7008,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_left_5 {
-	background-image: url(/themes/eft/images/quote_text_shadow_left.png);
+	background-image: url(../images/quote_text_shadow_left.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7025,7 +7025,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_right_1 {
-	background-image: url(/themes/eft/images/quote_text_shadow_right.png);
+	background-image: url(../images/quote_text_shadow_right.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7042,7 +7042,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_right_2 {
-	background-image: url(/themes/eft/images/quote_text_shadow_right.png);
+	background-image: url(../images/quote_text_shadow_right.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7059,7 +7059,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_right_3 {
-	background-image: url(/themes/eft/images/quote_text_shadow_right.png);
+	background-image: url(../images/quote_text_shadow_right.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7076,7 +7076,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_right_4 {
-	background-image: url(/themes/eft/images/quote_text_shadow_right.png);
+	background-image: url(../images/quote_text_shadow_right.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7093,7 +7093,7 @@ form .report_type .select2 {
 }
 
 #banner_28_preorder .main_quote:hover+.quote_shadow_right_5 {
-	background-image: url(/themes/eft/images/quote_text_shadow_right.png);
+	background-image: url(../images/quote_text_shadow_right.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	z-index: 0;
@@ -7247,7 +7247,7 @@ form .report_type .select2 {
 
 #Sherpa-CommentForm .main .request {
 	padding: 10px;
-	background: url(/themes/eft/images/news_li_bg.png) repeat top left scroll;
+	background: url(../images/news_li_bg.png) repeat top left scroll;
 }
 
 #Sherpa-CommentForm .main .request .subject {
@@ -7412,7 +7412,7 @@ form .report_type .select2 {
 	top: -2px;
 	left: -121px;
 	z-index: -2;
-	background: url(/themes/eft/images/discount_bg.png) center center no-repeat;
+	background: url(../images/discount_bg.png) center center no-repeat;
 }
 
 .email_field {
@@ -7786,7 +7786,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_1st.png");
+	background-image: url("../images/tournament_1st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -7799,7 +7799,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_2st.png");
+	background-image: url("../images/tournament_2st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -7812,7 +7812,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_3st.png");
+	background-image: url("../images/tournament_3st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -7981,7 +7981,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 32px;
 	height: 27px;
-	background-image: url("/themes/eft/images/rivals_frame.png");
+	background-image: url("../images/rivals_frame.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -7994,7 +7994,7 @@ form .report_type .select2 {
 	 margin: auto;
 	 width: 51px;
 	 height: 47px;
-	 background-image: url("/themes/eft/images/tournament_1st.png");
+	 background-image: url("../images/tournament_1st.png");
 	 background-repeat: no-repeat;
 	 background-size: cover;
  }
@@ -8007,7 +8007,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_2st.png");
+	background-image: url("../images/tournament_2st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -8020,7 +8020,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_3st.png");
+	background-image: url("../images/tournament_3st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -8141,7 +8141,7 @@ form .report_type .select2 {
 }
 
 #rivalsTable .header_rating {
-	background: url(/themes/eft/images/rating_season_stripe.png) repeat center center scroll;
+	background: url(../images/rating_season_stripe.png) repeat center center scroll;
 	padding: 10px 0;
 	margin: 0 0 42px 0;
 }
@@ -8325,19 +8325,19 @@ form .report_type .select2 {
 }
 
 #rivalsTable .playoff tr td .block .team .name .place .frame_1 {
-	background-image: url(/themes/eft/images/tournament_1st.png);
+	background-image: url(../images/tournament_1st.png);
 }
 
 #rivalsTable .playoff tr td .block .team .name .place .frame_2 {
-	background-image: url(/themes/eft/images/tournament_2st.png);
+	background-image: url(../images/tournament_2st.png);
 }
 
 #rivalsTable .playoff tr td .block .team .name .place .frame_3 {
-	background-image: url(/themes/eft/images/tournament_3st.png);
+	background-image: url(../images/tournament_3st.png);
 }
 
 #rivalsTable .playoff tr td .block .team .name .place .frame_4 {
-	background-image: url(/themes/eft/images/tournament_4st.png);
+	background-image: url(../images/tournament_4st.png);
 }
 
 #rivalsTable .playoff tr td .block .status_0 .name, #rivalsTable .playoff tr td .block .status_0 .score {
@@ -8570,7 +8570,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_1st.png");
+	background-image: url("../images/tournament_1st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -8583,7 +8583,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_2st.png");
+	background-image: url("../images/tournament_2st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -8596,7 +8596,7 @@ form .report_type .select2 {
 	margin: auto;
 	width: 51px;
 	height: 47px;
-	background-image: url("/themes/eft/images/tournament_3st.png");
+	background-image: url("../images/tournament_3st.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -8611,7 +8611,7 @@ form .report_type .select2 {
 }
 
 #tournamentTable .header_rating {
-	background: url(/themes/eft/images/rating_season_stripe.png) repeat center center scroll;
+	background: url(../images/rating_season_stripe.png) repeat center center scroll;
 	padding: 10px 0;
 	margin: 0 0 42px 0;
 }
@@ -8921,7 +8921,7 @@ form .report_type .select2 {
 .media_page_link .link_icon {
 	width: 100%;
 	height: 100%;
-	background-image: url(/themes/eft/images/link_icon.png);
+	background-image: url(../images/link_icon.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
