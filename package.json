@@ -1,6 +1,6 @@
 {
     "name": "tarkov-map-viewer",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "description": "view tarkov maps one click",
     "main": "app/index.js",
     "scripts": {
