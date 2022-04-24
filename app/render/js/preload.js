@@ -1,9 +1,8 @@
-
 const fs = require("fs")
 const path = require("path")
 const shell = require("electron").shell
-const { ipcRenderer} = require('electron')
-const CONFIG_PATH = ipcRenderer.sendSync('configPath')
+const { ipcRenderer } = require("electron")
+const CONFIG_PATH = ipcRenderer.sendSync("configPath")
 
 window.addEventListener("DOMContentLoaded", () => {
   const replaceText = (selector, text) => {
@@ -28,32 +27,36 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("editConfig").addEventListener("click", () => {
     shell.openPath(path.resolve(CONFIG_PATH))
   })
-var config
+  var config
 
-  if(fs.existsSync(CONFIG_PATH)) {
+  if (fs.existsSync(CONFIG_PATH)) {
     config = require(CONFIG_PATH)
   } else {
     config = {}
   }
 
   var filenames = new Array()
-  config.maps = config.maps ? config.maps : [
-    "customs",
-    "factory",
-    "interchange",
-    "lighthouse",
-    "shoreline",
-    "reserve",
-    "woods",
-    "labs"
-  ]
+  config.maps = config.maps
+    ? config.maps
+    : [
+        "customs",
+        "factory",
+        "interchange",
+        "lighthouse",
+        "shoreline",
+        "reserve",
+        "woods",
+        "labs"
+      ]
   config.extensions = ["png", "jpg", "bmp", "gif"]
 
   Object.entries(config.maps).forEach(([key, value]) => {
     const mapGrid = document.getElementById("thumbs")
 
     Object.entries(config.extensions).forEach(([key, ext]) => {
-      let filename = path.resolve(path.resolve(__dirname, "../assets", `${value}.${ext}`))
+      let filename = path.resolve(
+        path.resolve(__dirname, "../assets", `${value}.${ext}`)
+      )
 
       try {
         if (fs.existsSync(filename)) {
@@ -74,8 +77,9 @@ var config
   Object.entries(filenames).forEach(([key, value]) => {
     let id = value.split(".")
     document.getElementById(id[0]).addEventListener("click", () => {
-        let filepath = path.resolve(path.join(__dirname, "../assets",`${value}`))
-        let mapWindow = window.open(filepath,
+      let filepath = path.resolve(path.join(__dirname, "../assets", `${value}`))
+      let mapWindow = window.open(
+        filepath,
         "_blank",
         "height=1080,width=1920,resizable=0"
       )
