@@ -1,6 +1,6 @@
 
-
-# tarkov-map-viewer
+[![Build/release](https://github.com/aar0nsky/tarkov-map-viewer/actions/workflows/build.yml/badge.svg)](https://github.com/aar0nsky/tarkov-map-viewer/actions/workflows/build.yml)
+# tarkov-map-viewer 
 This is a nifty toolkit for playing tarkov.
 
 - [tarkov-map-viewer](#tarkov-map-viewer)
