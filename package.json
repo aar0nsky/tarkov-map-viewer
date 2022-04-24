@@ -44,15 +44,17 @@
       "output": "out"
     },
     "files": [
-    "package.json",
-    "app/**/*",
-    "node_modules"
+      "package.json",
+      "app/**/*",
+      "node_modules"
     ],
     "extraResources": [
       {
         "to": "config.json",
         "from": "config.json",
-      "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "win": {
