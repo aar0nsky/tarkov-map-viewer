@@ -27,16 +27,16 @@
     "electron-reloader": "^1.2.3",
     "eslint": "^8.13.0",
     "prettier": "^2.6.2",
-    "prettier-eslint": "^13.0.0"
+    "prettier-eslint": "^13.0.0",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "electron-default-menu": "^1.0.2",
-    "material-design-lite": "^1.3.0",
-    "rimraf": "^3.0.2"
+    "material-design-lite": "^1.3.0"
   },
   "build": {
     "appId": "development.tarkov-map-viewer",
-    "productName": "Tarkov Toolkit",
+    "productName": "Tarkov Map Viewer",
     "icon": "build/icon.ico",
     "compression": "maximum",
     "directories": {
@@ -47,6 +47,13 @@
     "package.json",
     "app/**/*",
     "node_modules"
+    ],
+    "extraResources": [
+      {
+        "to": "config.json",
+        "from": "config.json",
+      "filter": ["**/*"]
+      }
     ],
     "win": {
       "target": "NSIS",

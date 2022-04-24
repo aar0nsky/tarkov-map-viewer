@@ -16,8 +16,16 @@ try {
   require("electron-reloader")(module)
 } catch (_) {}
 
+const CONFIG_PATH = app.isPackaged ? 
+  path.join(process.resourcesPath, 'config.json') :
+  path.join(app.getAppPath(), 'config.json')
 
-const initConfig = require(path.join(__dirname, path.join("resources", "config.json")))
+const { ipcMain } = require('electron')
+ipcMain.on('configPath', (event) => {
+  event.returnValue = CONFIG_PATH
+})
+
+const initConfig = require(CONFIG_PATH)
 if(initConfig) {
   console.log(JSON.stringify(initConfig))
 }
@@ -56,7 +64,7 @@ const loadConfig = (exports.loadConfig = () => {
     runningConfig.mainWindow.y = 540
 
     fs.writeFile(
-      path.join(__dirname, path.join("resources", "config.json")),
+      path.join(CONFIG_PATH),
       JSON.stringify(runningConfig),
       "utf8",
       (err) => {
@@ -120,10 +128,9 @@ const createWindow = (exports.createWindow = () => {
   // })
 
   mainWindow.on("close", () => {
-    let configPath = path.join(__dirname, path.join("resources", "config.json"))
     try {
       runningConfig.mainWindow = mainWindow.getBounds()
-      fs.writeFileSync(configPath, JSON.stringify(runningConfig, null, 4))
+      fs.writeFileSync(CONFIG_PATH, JSON.stringify(runningConfig, null, 4))
     } catch (e) {
       console.log("cannot write to config.json")
       console.log(e)

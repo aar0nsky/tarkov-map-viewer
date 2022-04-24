@@ -1,11 +1,9 @@
-var config = require("../../resources/config.json")
+
 const fs = require("fs")
 const path = require("path")
 const shell = require("electron").shell
-
-// const IMAGES_PATH = app.isPackaged ? 
-//   path.join(process.resourcesPath, 'images') :
-//   path.join(app.getAppPath(), 'images')
+const { ipcRenderer} = require('electron')
+const CONFIG_PATH = ipcRenderer.sendSync('configPath')
 
 window.addEventListener("DOMContentLoaded", () => {
   const replaceText = (selector, text) => {
@@ -28,8 +26,15 @@ window.addEventListener("DOMContentLoaded", () => {
   })
 
   document.getElementById("editConfig").addEventListener("click", () => {
-    shell.openPath(path.resolve(__dirname, path.join("../../", path.join("resources", "config.json"))))
+    shell.openPath(path.resolve(CONFIG_PATH))
   })
+var config
+
+  if(fs.existsSync(CONFIG_PATH)) {
+    config = require(CONFIG_PATH)
+  } else {
+    config = {}
+  }
 
   var filenames = new Array()
   config.maps = config.maps ? config.maps : [
@@ -44,10 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
   ]
   config.extensions = ["png", "jpg", "bmp", "gif"]
 
-  // config = {...config}
-  // fs.writeFile('config.json', JSON.stringify(config), 'utf8', (err) => {
-  //   if(err) return console.log(err);
-  // })
   Object.entries(config.maps).forEach(([key, value]) => {
     const mapGrid = document.getElementById("thumbs")
 
