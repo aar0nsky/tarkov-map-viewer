@@ -99,19 +99,20 @@ const createWindow = (exports.createWindow = () => {
 
         let options = {
             action: "allow",
-            parent: mainWindow
+            parent: mainWindow,
+            overrideBrowserWindowOptions: {
+                x: 0,
+                y: 0,
+                autoHideMenuBar: true
+            }
         }
 
-        return windowScreen.id !== externalDisplay.id
-            ? options
-            : {
-                  ...options,
-                  overrideBrowserWindowOptions: {
-                      x: externalDisplay.bounds.x,
-                      y: externalDisplay.bounds.y,
-                      autoHideMenuBar: true
-                  }
-              }
+        if (windowScreen.id === externalDisplay.id) {
+            options.overrideBrowserWindowOptions.x = externalDisplay.bounds.x
+            options.overrideBrowserWindowOptions.y = externalDisplay.bounds.y
+        }
+
+        return options
     })
 
     mainWindow.on("close", () => {
