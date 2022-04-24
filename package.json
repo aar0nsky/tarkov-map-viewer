@@ -35,8 +35,10 @@
     "rimraf": "^3.0.2"
   },
   "build": {
-    "appId": "aar0nism.tarkovtoolkit",
+    "appId": "development.tarkov-map-viewer",
     "productName": "Tarkov Toolkit",
+    "icon": "build/icon.ico",
+    "compression": "maximum",
     "directories": {
       "app": ".",
       "output": "out"
@@ -47,7 +49,15 @@
     "node_modules"
     ],
     "win": {
-      "target": "NSIS"
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "license": "LICENSE",
+      "runAfterFinish": true
     }
   }
 }
