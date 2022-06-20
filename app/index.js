@@ -1,8 +1,6 @@
 const {
     app,
     BrowserWindow,
-    globalShortcut,
-    protocol,
     Menu,
     MenuItem,
     screen,
@@ -11,7 +9,10 @@ const {
 } = require("electron")
 const defaultMenu = require("electron-default-menu")
 const path = require("path")
-var fs = require("fs")
+const fs = require("fs")
+// ad blocking
+const { ElectronBlocker, fullLists } = require("@cliqz/adblocker-electron")
+const fetch = require("cross-fetch")
 try {
     require("electron-reloader")(module)
 } catch (_) {}
@@ -78,11 +79,16 @@ const loadConfig = (exports.loadConfig = () => {
     props = { ...props, ...runningConfig.mainWindow }
 })
 
-const createWindow = (exports.createWindow = () => {
+const createWindow = (exports.createWindow = async () => {
     loadConfig()
 
     let mainWindow = new BrowserWindow(props)
-
+    // ad blocking
+    const blocker = await ElectronBlocker.fromLists(fetch, fullLists, {
+        enableCompression: true
+    })
+    blocker.enableBlockingInSession(mainWindow.webContents.session)
+    //-
     mainWindow.loadFile(path.resolve(__dirname, "render/html/index.html"))
     mainWindow.show()
 
