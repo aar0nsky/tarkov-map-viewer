@@ -5,6 +5,7 @@ const {
     MenuItem,
     screen,
     webContents,
+    protocol,
     shell
 } = require("electron")
 const defaultMenu = require("electron-default-menu")
