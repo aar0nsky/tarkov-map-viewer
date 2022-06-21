@@ -3,8 +3,8 @@ name: Build/release
 on: push
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
+  release-windows:
+    runs-on: windows-latest
     # runs-on: ${{ matrix.os }}
     # strategy:
     #   matrix:
@@ -29,7 +29,8 @@ jobs:
           # If the commit is tagged with a version (e.g. "v1.0.0"),
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
-
+  discord:
+    runs-on: ubuntu-latest
       - name: Send message to discord channel
         uses: aar0nsky/discord-webhook-github-action@main
         with:
