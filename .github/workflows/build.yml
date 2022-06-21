@@ -31,7 +31,7 @@ jobs:
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
       - name: Send message to discord channel
-        uses: 'aar0nism/discord-webhook-github-action:latest'
+        uses: aar0nsky/discord-webhook-github-action@main
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
