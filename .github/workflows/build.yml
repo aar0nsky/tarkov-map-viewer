@@ -4,6 +4,7 @@ on: push
 
 jobs:
   release:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest]
