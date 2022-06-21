@@ -30,8 +30,8 @@ jobs:
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
 
-      - name: send custom message with args
-        uses: appleboy/discord-action@master
+      - name: Send message to discord channel
+        uses: aar0nism/discord-webhook-github-action:latest
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
           webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
