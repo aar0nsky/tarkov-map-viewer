@@ -3,7 +3,7 @@ name: Build/release
 on: push
 
 jobs:
-  release-windows:
+  release:
     runs-on: windows-latest
     # runs-on: ${{ matrix.os }}
     # strategy:
@@ -33,6 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to discord channel
+        if: steps.release.conclusion == success
         uses: aar0nsky/discord-webhook-github-action@main
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
