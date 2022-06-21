@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send message to discord channel
-        if: steps.release.conclusion == success
+        if: ${{ github.event.release.conclusion == 'success' }}
         uses: aar0nsky/discord-webhook-github-action@main
         with:
           webhook_id: ${{ secrets.WEBHOOK_ID }}
