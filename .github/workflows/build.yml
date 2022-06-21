@@ -30,6 +30,7 @@ jobs:
           # release the app after building
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
   discord:
+    needs: release
     runs-on: ubuntu-latest
     if: ${{ github.event.release.conclusion == 'success' }}
     steps:
