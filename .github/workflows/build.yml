@@ -4,11 +4,9 @@ on: push
 
 jobs:
   release:
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [windows-latest, ubuntu-latest]
 
     steps:
       - name: Check out Git repository
